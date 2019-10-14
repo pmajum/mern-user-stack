@@ -6,9 +6,10 @@ const create = (req, res, next) => {
   const user = new User(req.body)
   user.save((err, result) => {
     if (err) {
+      console.error(err)
       return res.status(400).json({
         //error: errorHandler.getErrorMessage(err)
-        console.error(err)
+
         error: "Something went Wrong"
       })
     }
