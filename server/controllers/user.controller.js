@@ -8,6 +8,7 @@ const create = (req, res, next) => {
     if (err) {
       return res.status(400).json({
         //error: errorHandler.getErrorMessage(err)
+        console.error(err)
         error: "Something went Wrong"
       })
     }
