@@ -9,9 +9,11 @@ app.listen(config.port, (err) => {
   console.info('Server started on port %s.', config.port)
 })
 
-mongoose.Promise = global.Promise
+console.info('Mongo DB connection %s', config.mongoUri)
+
+/*mongoose.Promise = global.Promise
 mongoose.connect(config.mongoUri)
 
 mongoose.connection.on('error', () => {
   throw new Error(`unable to connect to database: ${mongoUri}`)
-})
+})*/
