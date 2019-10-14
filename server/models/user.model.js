@@ -26,6 +26,18 @@ salt: String
 
 })
 
+UserSchema.pre("save", function (next) {
+    // store reference
+    const user = this;
+    if (user._password === undefined) {
+        return next();
+    }
+
+    user.hashed_password = this.encryptPassword(user._password)
+    next();
+
+});
+
 
 UserSchema
   .virtual('password')
