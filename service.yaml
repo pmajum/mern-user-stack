@@ -8,5 +8,5 @@ spec:
       containers:
         - image: docker.io/prasenjit/helloworld-nodejs:v11
           env:
-            - name: TARGET
-              value: "Node.js Sample v1"
+            - name: IP
+              value: "mongo"
