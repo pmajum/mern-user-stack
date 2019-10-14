@@ -19,8 +19,7 @@ created: {
 },
 updated: Date,
 hashed_password: {
-    type: String,
-    required: "Password is required"
+    type: String
 },
 salt: String
 
