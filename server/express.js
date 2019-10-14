@@ -4,6 +4,7 @@ import cookieParser from 'cookie-parser'
 import compress from 'compression'
 import cors from 'cors'
 import helmet from 'helmet'
+import path from 'path'
 import Template from './../template'
 
 const CURRENT_WORKING_DIR = process.cwd()
