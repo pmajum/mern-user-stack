@@ -1,13 +1,14 @@
 import User from '../models/user.model'
 import _ from 'lodash'
-import errorHandler from './../helpers.dbErrorHandler'
+//import errorHandler from './../helpers.dbErrorHandler'
 
 const create = (req, res, next) => {
   const user = new User(req.body)
   user.save((err, result) => {
     if (err) {
       return res.status(400).json({
-        error: errorHandler.getErrorMessage(err)
+        //error: errorHandler.getErrorMessage(err)
+        error: "Something went Wrong"
       })
     }
     res.status(200).json({
@@ -19,7 +20,8 @@ const list = (req, res) => {
   User.find((err, users) => {
     if (err) {
       return res.status(400).json({
-        error: errorHandler.getErrorMessage(err)
+        //error: errorHandler.getErrorMessage(err)
+        error: "Something went Wrong"
       })
     }
     res.json(users)
@@ -47,7 +49,8 @@ const update = (req, res, next) => {
   user.save((err) => {
     if (err) {
       return res.status(400).json({
-        error: errorHandler.getErrorMessage(err)
+        //error: errorHandler.getErrorMessage(err)
+        error: "Something went Wrong"
       })
     }
     user.hashed_password = undefined
@@ -60,7 +63,8 @@ const remove = (req, res, next) => {
   user.remove((err, deletedUser) => {
     if (err) {
       return res.status(400).json({
-        error: errorHandler.getErrorMessage(err)
+        //error: errorHandler.getErrorMessage(err)
+        error: "Something went Wrong"
       })
     }
     deletedUser.hashed_password = undefined
